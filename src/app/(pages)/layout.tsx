@@ -1,6 +1,5 @@
 import React from 'react';
-import './globals.css';
-import Providers from './providers';
+import MainContainer from '@/components/MainContainer';
 
 export const metadata = {
   title: 'Currency converter | Home',
@@ -12,11 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <Providers>
-        <body>{children}</body>
-      </Providers>
-    </html>
-  );
+  return <MainContainer>{children}</MainContainer>;
 }
