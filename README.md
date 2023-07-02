@@ -26,6 +26,7 @@ The app should now be running locally on http://localhost:3000 by default.
 
 The Currency converter is currently deployed at vercel. You can access the deployed app using this base URL:
 
+[DEMO LINK](https://currency-converter-next-nine.vercel.app)
 
 ## Tech Stack
 
