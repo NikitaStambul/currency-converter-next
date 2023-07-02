@@ -5,28 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-const CustomLink = ({
-  href,
-  children,
-  ...restProps
-}: {
-  href: string;
-  children: React.ReactNode;
-  restProps?: any[];
-}) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
 
-  const linkClassName = isActive ? 'active' : '';
-
-  return (
-    <Link href={href} className={linkClassName} {...restProps}>
-      {children}
-    </Link>
-  );
-};
-
-const NavLink = styled(CustomLink)(({ theme }) => ({
+const CustomLink = styled(Link)(({ theme }) => ({
   position: 'relative',
   borderRadius: 8,
   padding: '8px 16px',
@@ -61,5 +41,27 @@ const NavLink = styled(CustomLink)(({ theme }) => ({
     transition: theme.transitions.create('all'),
   },
 }));
+
+const NavLink = ({
+  href,
+  children,
+  ...restProps
+}: {
+  href: string;
+  children: React.ReactNode;
+  restProps?: any[];
+}) => {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  const linkClassName = isActive ? 'active' : '';
+
+  return (
+    <CustomLink href={href} className={linkClassName} {...restProps}>
+      {children}
+    </CustomLink>
+  );
+};
+
 
 export default NavLink;
