@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use client';
 
 import React, { useEffect } from 'react';
@@ -7,6 +8,7 @@ import Footer from '@/components/Footer';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { fetchExchange } from '@/store/slices/exchangeSlice';
 import { redirect } from 'next/navigation';
+import Loader from './Loader';
 
 const MainContainer = ({ children }: { children: React.ReactNode }) => {
   const { fromCurrency } = useAppSelector((state) => state.currencyState);
@@ -14,10 +16,14 @@ const MainContainer = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     dispatch(fetchExchange());
-  }, [dispatch]);
+
+    if (!fromCurrency) {
+      redirect('/set-currency');
+    }
+  }, [dispatch, fromCurrency]);
 
   if (!fromCurrency) {
-    redirect('/set-currency');
+    return <Loader />;
   }
 
   return (

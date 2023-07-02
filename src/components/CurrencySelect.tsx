@@ -9,14 +9,8 @@ import { currencies } from '../constants/currencies';
 const StyledTextField = styled(TextField)(({ theme }) => ({
   '& .MuiInput-root .MuiInput-input': {
     color: theme.palette.text.secondary,
-    outline: 'none',
-    border: 'none',
     fontWeight: 600,
     padding: 0,
-
-    '&::before': {
-      border: 'none !important',
-    },
   },
   '& .MuiAutocomplete-endAdornment .MuiButtonBase-root': {
     padding: 0,

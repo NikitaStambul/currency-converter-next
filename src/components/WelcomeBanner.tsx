@@ -8,13 +8,6 @@ import CurrencySelect from './CurrencySelect';
 import { useAppDispatch } from '../store/hooks';
 import { getCurrencyName } from '../helpers/getCurrencyName';
 
-const StyledStack = styled(Stack)(({ theme }) => ({
-  maxWidth: '100%',
-  background: theme.palette.background.secondary,
-  borderRadius: 30,
-  padding: 40,
-}));
-
 const StyledButton = styled(Button)(({ theme }) => ({
   padding: '8px 48px',
   color: '#ffffff',
@@ -48,7 +41,7 @@ const WelcomeBanner = () => {
   };
 
   return (
-    <StyledStack spacing={5}>
+    <Stack spacing={5} p={5} bgcolor='background.secondary' borderRadius={8}>
       <Typography variant="section-headline">
         {'Selected currency: '}
         <Typography variant="section-headline" color="primary.main">
@@ -67,7 +60,7 @@ const WelcomeBanner = () => {
         <Typography>If not, select one from the list below 😉</Typography>
         <CurrencySelect isFrom placeholder={guessedCurrency} />
       </Stack>
-    </StyledStack>
+    </Stack>
   );
 };
 
