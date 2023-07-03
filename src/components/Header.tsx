@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Box, Container, IconButton, Stack } from '@mui/material';
 import Logo from './Logo';

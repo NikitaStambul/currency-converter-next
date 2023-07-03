@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
 import swapIcon from '../assets/logo-icon.svg';

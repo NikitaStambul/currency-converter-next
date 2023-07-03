@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-'use client';
-
 import React from 'react';
 import { Autocomplete, TextField } from '@mui/material';
 import { currencies } from '../constants/currencies';
