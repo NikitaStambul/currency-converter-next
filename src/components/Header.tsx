@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Container, IconButton, Stack } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import Logo from './Logo';
 import NavLink from './NavLink';
-import menuIcon from '@/assets/menu.svg';
-import Image from 'next/image';
+import NavMenu from './NavMenuButton';
+
 
 const Header = () => {
   return (
@@ -26,9 +26,7 @@ const Header = () => {
             <NavLink href="/currencies">Currencies</NavLink>
             <NavLink href="/converter">Converter</NavLink>
           </Stack>
-          <IconButton sx={{ display: { mobile: 'flex', tablet: 'none' } }}>
-            <Image src={menuIcon} alt="menu" />
-          </IconButton>
+          <NavMenu />
         </Box>
       </Container>
     </Box>

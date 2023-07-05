@@ -1,22 +1,13 @@
 'use client';
 
-import { Button, Stack, Typography, styled } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { getLocaleData } from '../api/locale';
 import { setFromCurrency } from '../store/slices/currencySlice';
 import CurrencySelect from './CurrencySelect';
 import { useAppDispatch } from '../store/hooks';
 import { getCurrencyName } from '../helpers/getCurrencyName';
-
-const StyledButton = styled(Button)(({ theme }) => ({
-  padding: '8px 48px',
-  color: '#ffffff',
-  textTransform: 'none',
-  gap: '10px',
-  borderRadius: 40,
-  fontWeight: 600,
-  background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-}));
+import GradientButton from './GradientButton';
 
 const WelcomeBanner = () => {
   const dispatch = useAppDispatch();
@@ -54,7 +45,7 @@ const WelcomeBanner = () => {
           <br /> your currency is {getCurrencyName(guessedCurrency)}, is it
           correct?
         </Typography>
-        <StyledButton onClick={handleAcceptGuess}>Yes! 👌</StyledButton>
+        <GradientButton onClick={handleAcceptGuess}>Yes! 👌</GradientButton>
       </Stack>
       <Stack spacing={2.5} alignItems="center">
         <Typography>If not, select one from the list below 😉</Typography>

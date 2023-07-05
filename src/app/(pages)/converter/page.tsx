@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-import { Stack } from '@mui/material';
-import { styled } from '@mui/material';
+import { Stack, styled } from '@mui/material';
 import Converter from '@/components/Converter';
 import Prompt from '@/components/Prompt';
 

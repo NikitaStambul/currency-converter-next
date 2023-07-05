@@ -33,7 +33,7 @@ const MainContainer = ({ children }: { children: React.ReactNode }) => {
         sx={{
           padding: '32px 0',
           marginBottom: 0,
-          minHeight: 400,
+          minHeight: { mobile: 560, tablet: 400 },
           height: 'calc(100dvh - 140px)',
         }}
         maxWidth="tablet"
